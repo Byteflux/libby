@@ -41,4 +41,15 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>byteflux-releases</id>
+            <url>https://repo.byteflux.net/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>byteflux-snapshots</id>
+            <url>https://repo.byteflux.net/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
