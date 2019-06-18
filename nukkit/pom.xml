@@ -7,7 +7,7 @@
     <parent>
         <groupId>net.byteflux</groupId>
         <artifactId>libby</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>libby-nukkit</artifactId>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>net.byteflux</groupId>
             <artifactId>libby-core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>cn.nukkit</groupId>
