@@ -209,8 +209,6 @@ public abstract class LibraryManager {
             connection.setRequestProperty("User-Agent", LibbyProperties.HTTP_USER_AGENT);
 
             try (InputStream in = connection.getInputStream()) {
-                logger.info("Downloading: " + connection.getURL());
-
                 int len;
                 byte[] buf = new byte[8192];
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -224,7 +222,7 @@ public abstract class LibraryManager {
                     return null;
                 }
 
-                logger.info("Download complete.");
+                logger.info("Downloaded library " + connection.getURL());
                 return out.toByteArray();
             }
         } catch (MalformedURLException e) {
@@ -357,12 +355,10 @@ public abstract class LibraryManager {
         }
 
         try {
-            logger.info("Relocating: " + saveDirectory.getParent().relativize(in));
-
             relocator.relocate(in, tmpOut, relocations);
             Files.move(tmpOut, file);
 
-            logger.info("Relocation complete.");
+            logger.info("Relocations applied to " + saveDirectory.getParent().relativize(in));
 
             return file;
         } catch (IOException e) {
@@ -392,7 +388,5 @@ public abstract class LibraryManager {
         }
 
         addToClasspath(file);
-
-        logger.info("Loaded library '" + library + "' at " + saveDirectory.getParent().relativize(file));
     }
 }
